@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 type FormProps = {
   createItem: Function;
@@ -20,15 +21,29 @@ export const Form: React.FC<FormProps> = ({ createItem }) => {
   return (
     <div>
       <form onSubmit={addItem}>
-        <input
+        <SInput
           type="text"
           value={enteredItem}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setEnteredItem(e.target.value)
           }
         />
-        <button>+</button>
+        <SButton>追加</SButton>
       </form>
     </div>
   );
 };
+
+const SInput = styled.input`
+  height: 30px;
+  width: 230px;
+  margin-bottom: 30px;
+  margin-right: 5px;
+`;
+
+const SButton = styled.button`
+  background-color: navy;
+  color: white;
+  width: 50px;
+  height: 30px;
+`;

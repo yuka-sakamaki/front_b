@@ -35,16 +35,17 @@ export const ItemContainer = () => {
 
   return (
     <SContainer>
-      <SWrapper>
-        <Form createItem={createItem} />
-        <List items={items} deleteItem={deleteItem} />
-      </SWrapper>
+      <Form createItem={createItem} />
+      <List items={items} deleteItem={deleteItem} />
     </SContainer>
   );
 };
 
 const SContainer = styled.div`
-  width: auto;
+  width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 `;
-
-const SWrapper = styled.div``;
